@@ -430,31 +430,51 @@ function renderAdminRows(rows) {
   });
 }
 
+
 async function loadAdminDashboard() {
-  showStatus(adminStatus, "Loading guest list...");
+  showStatus(adminStatus, "Loading RSVP responses...");
 
-  const { data, error } = await supabase
-    .from("debut_rsvps")
-    .select("id, guest_name, contact, attendance, message, created_at")
-    .order("created_at", { ascending: false });
+  try {
+    const { data, error } = await supabase
+      .from("debut_rsvps")
+      .select("id, guest_name, contact, attendance, message, created_at")
+      .order("created_at", { ascending: false });
 
-  if (error) {
-    console.error("Admin dashboard query error:", error);
+    if (error) {
+      console.error("Admin RSVP query failed:", error);
+      showStatus(
+        adminStatus,
+        `Could not load responses: ${error.message}`,
+        "error"
+      );
+      return;
+    }
+
+    console.log("RSVP rows received:", data);
+    console.log("Total RSVP responses:", data.length);
+
+    // Update all three counters and the guest list.
+    renderAdminRows(data);
+
+    if (adminDashboard) adminDashboard.hidden = false;
+    if (adminLoginForm) adminLoginForm.hidden = true;
 
     showStatus(
       adminStatus,
-      "Login succeeded, but the guest list could not load. Check the admin UID and Supabase SELECT policy.",
+      `Successfully loaded ${data.length} RSVP response(s).`,
+      "success"
+    );
+  } catch (error) {
+    console.error("Unexpected dashboard error:", error);
+
+    showStatus(
+      adminStatus,
+      error instanceof Error ? error.message : String(error),
       "error"
     );
-    return;
   }
-
-  renderAdminRows(data || []);
-
-  if (adminStatus) adminStatus.textContent = "";
-  if (adminDashboard) adminDashboard.hidden = false;
-  if (adminLoginForm) adminLoginForm.hidden = true;
 }
+
 
 async function openAdminDashboard() {
   if (!adminDialog) {
