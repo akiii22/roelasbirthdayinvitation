@@ -859,6 +859,32 @@
   }
 }
 
+/* Scroll inside the guest list, not the entire dashboard */
+.admin-guest-list {
+  max-height: 360px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #d4af70 #35111b;
+  border-radius: 12px;
+}
+
+.admin-guest-list::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-guest-list::-webkit-scrollbar-track {
+  background: #35111b;
+  border-radius: 10px;
+}
+
+.admin-guest-list::-webkit-scrollbar-thumb {
+  background: #d4af70;
+  border-radius: 10px;
+}
+
+
+
 </style>
 
   </div>
