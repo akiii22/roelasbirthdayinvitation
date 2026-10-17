@@ -244,7 +244,7 @@ const mapLink = $(".venue-map-button") || $("#map-link");
  * On the deployed website this becomes the public URL.
  * Do not share QR codes generated while testing localhost.
  */
-const publicPageUrl = `${window.location.origin}${window.location.pathname}`;
+const publicPageUrl = "https://roelasbirthdayinvitation.vercel.app/";
 
 if (rsvpQr) {
   rsvpQr.src = qrImage(`${publicPageUrl}#rsvp`);
@@ -359,23 +359,25 @@ function isAuthorizedAdmin(user) {
   );
 }
 
+
 function renderAdminRows(rows) {
   adminRows = rows;
 
-  const attending = rows.filter((row) => row.attendance === "yes");
-  const declined = rows.filter((row) => row.attendance === "no");
+  const attending = rows.filter(
+    (row) => row.attendance === "yes"
+  );
 
-  if ($("#admin-total-count")) {
-    $("#admin-total-count").textContent = String(rows.length);
-  }
+  const declined = rows.filter(
+    (row) => row.attendance === "no"
+  );
 
-  if ($("#admin-attending-count")) {
-    $("#admin-attending-count").textContent = String(attending.length);
-  }
+  const totalCount = document.querySelector("#admin-total-count");
+  const attendingCount = document.querySelector("#admin-attending-count");
+  const declinedCount = document.querySelector("#admin-declined-count");
 
-  if ($("#admin-declined-count")) {
-    $("#admin-declined-count").textContent = String(declined.length);
-  }
+  if (totalCount) totalCount.textContent = String(rows.length);
+  if (attendingCount) attendingCount.textContent = String(attending.length);
+  if (declinedCount) declinedCount.textContent = String(declined.length);
 
   const search = String(adminSearch?.value || "").trim().toLowerCase();
 
@@ -387,7 +389,7 @@ function renderAdminRows(rows) {
 
   adminGuestList.replaceChildren();
 
-  if (!filtered.length) {
+  if (filtered.length === 0) {
     const empty = document.createElement("p");
     empty.className = "admin-empty";
     empty.textContent = search
