@@ -150,7 +150,7 @@ const traditionData = {
     title: "18th Gifts",
     kicker: "Thoughtful tokens",
     names: [
-      "Ciara", "Stephanie", "Elijah May", "Jasmine", "Hafi",
+      "Ciara", "Stephanie", "Elijah", "May", "Jasmine", "Hafi",
       "Maecey", "Ate Jenny", "Ate Katrina", "Ayesha", "Mira",
       "Khate Ann", "Zeah", "Allen Joy", "Rhian", "Ate Ashley",
       "Laila", "Ate Zsaniah"
