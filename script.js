@@ -128,10 +128,10 @@ const traditionData = {
     title: "18th Lilies",
     kicker: "A glow of love",
     names: [
-      "Kiel", "Angelo", "Ivan", "John", "Lorenz", "Allen",
+      "Kiel", "Angelo", "Ivan", "John Lorenz", "Allen",
       "Richson", "John Christopher", "Kuya Kenneth", "Kuya Jerome",
       "Kuya Mark", "Ichiro", "Bryan", "Saimon", "Jeiro",
-      "Kuya Mike", "Kuya Jhonuel", "Luis", "Papa"
+      "Kuya Mike", "Kuya Jhonuel", "Luis", "Prince", "Papa"
     ]
   },
 
