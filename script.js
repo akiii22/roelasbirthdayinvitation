@@ -151,7 +151,7 @@ const traditionData = {
     kicker: "Thoughtful tokens",
     names: [
       "Ciara", "Stephanie", "Elijah", "May", "Jasmine", "Hafi",
-      "Maecey", "Ate Jenny", "Ate Katrina", "Ayesha", "Mira",
+      "Maecey", "Ate Jenny", "Ate Katrina", "Ayesha", "Joanna",
       "Khate Ann", "Zeah", "Allen Joy", "Rhian", "Ate Ashley",
       "Laila", "Ate Zsaniah"
     ]
