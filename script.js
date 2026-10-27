@@ -130,7 +130,7 @@ const traditionData = {
     names: [
       "Kiel", "Angelo", "Ivan", "John Lorenz", "Allen",
       "Richson", "John Christopher", "Kuya Kenneth", "Kuya Jerome",
-      "Kuya Mark", "Ichiro", "Bryan", "Saimon", "Jeiro",
+      "Kuya Mark", "Kuya Lenard", "Bryan", "Saimon", "Jeiro",
       "Kuya Mike", "Kuya Jhonuel", "Prince", "Papa"
     ]
   },
