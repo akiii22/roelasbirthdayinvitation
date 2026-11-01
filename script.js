@@ -141,7 +141,7 @@ const traditionData = {
     names: [
       "Ashia", "Cherrylyn", "Sofia", "Ketsana", "Daneah",
       "Gwen", "Kyla", "Zoe", "Rhianna", "Jenelle", "Ma’am Yakit",
-      "Nhisreen", "Joyjoy", "Kuya Em", "Ate Jeramine",
+      "Nhisreen", "Joyjoy", "Kuya Em", "Tita Rina",
       "Mama", "Papa", "Lola"
     ]
   },
